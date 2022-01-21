@@ -177,11 +177,18 @@ const FirmType = new GraphQLObjectType({
 const PieceType = new GraphQLObjectType({
     name: 'Piece',
     fields: ( ) => ({
+        placeId: {type: GraphQLID},
         id: { type: GraphQLID },
         nameId: { type: GraphQLInt },
         placeId: { type: GraphQLID },
         length: { type: GraphQLInt },
         width: { type: GraphQLInt },
+        firm: {
+            type: FirmType,
+            resolve(parent, args){
+                return Firm.findById(parent.firmId);
+            }
+        },
         sale:{
             type: SaleType,
             resolve(parent, args){
@@ -650,19 +657,19 @@ const Mutation = new GraphQLObjectType({
                 pieceId: {type: new GraphQLNonNull(GraphQLID)},
                 saleId: {type: new GraphQLNonNull(GraphQLID)}
             },
-            resolve(parent, args){
-                var piece1 = Piece.findById(args.pieceId);
+            async resolve(parent, args){
+                const piece1 = await Piece.findById(args.pieceId);
                 newPiece = new Piece({
-                    lottId: piece1.lott.id,
+                    lottId: piece1.lottId,
                     nameId: piece1.nameId,
                     length: piece1.length,
                     width: piece1.width,
-                    placeId: piece1.place.id,
-                    firmId: piece1.firm.id,
+                    placeId: piece1.placeId,
+                    firmId: piece1.firmId,
                     saleId: args.saleId
                 });
-                Piece.findByIdAndRemove(args.pieceId)
-                return newPiece.save()
+                await piece1.remove();
+                return newPiece.save();
             }
             
         }
