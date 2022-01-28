@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const brokerSchema = new Schema({
 
     name: String,
-    phone: String, 
+    phone: Number, 
     email: String
 
 });

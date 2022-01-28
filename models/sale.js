@@ -3,17 +3,15 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const saleSchema = new Schema({
-    
-    firmId: String,
-    pricePer: Number,
-    cutOrUncut: Number,
-    productId: String,
-    date: String,
-    time: String, 
-    placeId: String,
+    billAmount: Number,
+    billDateTime: String, 
     billNumber: Number,
-    CustomerName: String,
-    
+    customerName: String,
+    quantity: Number,
+    length: Number,
+    width: Number,
+    pieceId: String,
+    cutProductId: String
 });
 
 module.exports = mongoose.model('Sale', saleSchema);
