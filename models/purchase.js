@@ -3,13 +3,14 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const purchaseSchema = new Schema({
+    brokerId: String,
     royelty: Number,
     weight: Number, 
     firmId: String,
-    date: String,
-    time: String, 
+    invoiceDateTime: String,
     billNumber: Number,
-    expensesId: String,
+    logisticsId: String,
+    factoryId: String
 });
 
 module.exports = mongoose.model('Purchase', purchaseSchema);

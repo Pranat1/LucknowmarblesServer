@@ -2,7 +2,7 @@ const { intersection } = require('lodash');
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const expensesSchema = new Schema({
+const logisticsSchema = new Schema({
     
     date: String,
     biltyNumber: Number,
@@ -12,4 +12,4 @@ const expensesSchema = new Schema({
     weight: Number, 
 });
 
-module.exports = mongoose.model('Expenses', expensesSchema);
+module.exports = mongoose.model('Logistics', logisticsSchema);

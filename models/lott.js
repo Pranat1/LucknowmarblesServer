@@ -5,12 +5,10 @@ const Schema = mongoose.Schema;
 
 const lottSchema = new Schema({
     
-    nameId: Number,
+    lottNo: Number,
     productId: String,
-    pricePer: Number,
-    placeId: String,
-    origin: String,
-    firmId: String,
+    thickenss: Number,
+    cost: Number,
     purchaseId: String
 });
 
