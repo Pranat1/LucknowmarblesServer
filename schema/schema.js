@@ -853,7 +853,7 @@ const Mutation = new GraphQLObjectType({
                     productId: args.productId,
                     cost: args.cost,
                     placeId: args.placeId,
-                    sizeId: args.size,
+                    sizeId: args.sizeId,
                     quantity: args.quantity,
                     purchaseId: args.purchaseId
                 });
