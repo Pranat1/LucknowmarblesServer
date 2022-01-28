@@ -4,11 +4,11 @@ const Schema = mongoose.Schema;
 
 const purchaseSchema = new Schema({
     brokerId: String,
-    royelty: Number,
+    royaltyAmount: Number,
     weight: Number, 
     firmId: String,
-    invoiceDateTime: String,
-    billNumber: Number,
+    billDateTime: String,
+    billNumber: String,
     logisticsId: String,
     factoryId: String
 });

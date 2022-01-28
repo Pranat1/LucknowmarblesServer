@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const firmSchema = new Schema({
     name: String,
-    GSTN: String
+    gstin: String
 });
 
 module.exports = mongoose.model('Firm', firmSchema);

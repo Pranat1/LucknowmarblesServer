@@ -5,10 +5,11 @@ const Schema = mongoose.Schema;
 const logisticsSchema = new Schema({
     
     date: String,
-    biltyNumber: Number,
-    freight: Number,
-    loading: Number,
-    unloading: Number,
+    biltyNumber: String,
+    freightNumber: String,
+    freightCost: Number,
+    loadingCost: Number,
+    unloadingCos: Number,
     weight: Number, 
 });
 

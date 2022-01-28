@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const pieceSchema = new Schema({
-    pieceNo: Number,
+    pieceNumber: Number,
     placeId: String,
     length: Number,
     width: Number,

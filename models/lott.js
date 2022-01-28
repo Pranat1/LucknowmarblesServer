@@ -5,7 +5,7 @@ const Schema = mongoose.Schema;
 
 const lottSchema = new Schema({
     
-    lottNo: Number,
+    lottNumber: String,
     productId: String,
     thickenss: Number,
     cost: Number,
